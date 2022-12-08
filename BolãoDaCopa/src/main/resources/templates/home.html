@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:insert="~{base :: head}">
+
+
+
+</head>
+
+<body id="page-top">
+<div th:replace="~{base :: header}">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark pb-4">
+       <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav mt-2">
+               <li class="nav-item active">
+                 <a class="nav-link"  href="login">Login</a>
+               </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cadastro">Cadastro</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="aposta">Faça sua Aposta</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+</div>
+    <div class="card">
+        <div class="mt-5">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-center">
+                            <div><h1>Página Inicial</h1></div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div><h2>Bolão da Copa do Mundo</h2></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div th:each="aposta: ${apostas}">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="text-center">
+                        <div class="d-flex justify-content-center">
+                            <strong>Apostas Registradas</strong>
+                        </div>
+                        <div class="d-flex justify-content-center pr-1">
+                            <p>Time Mandante: </p>
+                            <p th:text="${aposta.partida.selecao1.nome}"></p>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <p>Time Visitante: </p>
+                            <p th:text="${aposta.partida.selecao2.nome}"></p>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <p>Odd: </p>
+                            <p th:text="${aposta.odd}"></p>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <p>Valor Apostado: </p>
+                            <p th:text="${aposta.quantia}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+
+</body>
+
+</html>

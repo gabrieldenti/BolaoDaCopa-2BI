@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:insert="~{base :: head}">
+
+
+
+</head>
+
+<body class="bg-gradient-primary">
+<div th:insert="~{base :: header}">
+
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <form action="aposta" method="POST">
+                        <div class="form-group">
+                            <label>Partida</label>
+                                <select name="partida" class="custom-select">
+                                    <option th:each="partida : ${partidas}" th:value="${partida.id}" th:text="${partida.nomePartida}"></option>
+                                </select>
+                            <label for="Tipo">Tipo</label>
+                            <input class="form-control" type="text" name="tipo" id="Tipo"
+                                   placeholder="Over 2.5 Gols/Seleção 1 Vence">
+                            <label for="odd">Odd</label>
+                            <input class="form-control" type="number" name="odd" id="odd" min="0" placeholder="0.00">
+                            <label for="quantia">Quantia</label>
+                            <input id="quantia" name="quantia" class="form-control" type="number" min="0" placeholder="Quantia da Aposta">
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>

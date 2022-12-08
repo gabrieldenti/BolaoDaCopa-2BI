@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="~{base :: head}">
+
+</head>
+<body class="bg-gradient-primary">
+<div th:insert="~{base :: header}">
+
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <form action="login" method="POST">
+                        <h2>Login</h2>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="email" name="email" id="email"
+                                   placeholder="Digite seu E-mail">
+                            <label for="senha">Senha</label>
+                            <input class="form-control" type="password" name="senha" id="senha"
+                                   placeholder="Digite sua Senha">
+                            <small class="text-danger" th:if="${verificarLogin == false}">Email ou Senha incorretos</small>
+                            <small class="text-success" th:if="${verificarLogin == true}">Conta Logada com Sucesso</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
